@@ -1,5 +1,5 @@
 /**
- * An expression node which is part of an abstract syntax tree.
+ * An expression node in an abstract syntax tree.
  */
 class ExprNode {
     private token: Token;

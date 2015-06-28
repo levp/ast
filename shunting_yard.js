@@ -331,7 +331,7 @@ var FunctionMap = {
     },
 };
 /**
- * An expression node which is part of an abstract syntax tree.
+ * An expression node in an abstract syntax tree.
  */
 var ExprNode = (function () {
     function ExprNode(token, children) {
