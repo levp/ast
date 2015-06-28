@@ -490,7 +490,6 @@ var AST;
     AST.create = create;
     function popOperator(opStack, exprStack) {
         var token = opStack.pop();
-        console.log(opStack, exprStack);
         if (token.type !== TokenType.Function && token.type !== TokenType.Operator) {
             throw new Error("Invalid operator or function token.");
         }

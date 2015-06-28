@@ -139,7 +139,6 @@ module AST {
 
     function popOperator(opStack: Token[], exprStack: ExprNode[]): void {
         const token = opStack.pop();
-        console.log(opStack, exprStack);
 
         if (token.type !== TokenType.Function && token.type !== TokenType.Operator) {
             throw new Error("Invalid operator or function token.");
