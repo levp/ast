@@ -1,5 +1,9 @@
 module AST {
     export function create(tokens: Token[]): ExprNode {
+        if (tokens.length === 0) {
+            throw new Error("At least one token is required to create an AST.");
+        }
+
         const exprStack: ExprNode[] = [];
         const opStack: Token[] = [];
 

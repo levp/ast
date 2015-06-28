@@ -367,6 +367,9 @@ var ExprNode = (function () {
 var AST;
 (function (AST) {
     function create(tokens) {
+        if (tokens.length === 0) {
+            throw new Error("At least one token is required to create an AST.");
+        }
         var exprStack = [];
         var opStack = [];
         for (var _i = 0; _i < tokens.length; _i++) {
