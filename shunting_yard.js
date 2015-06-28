@@ -284,8 +284,9 @@ var Tokenizer;
                 break;
             }
         }
-        var functionName = expr.substr(index, i);
+        var functionName = expr.substring(index, i);
         if (!FunctionMap.hasOwnProperty(functionName)) {
+            console.log(functionName);
             // No function with such a name exists
             return null;
         }
@@ -312,7 +313,22 @@ var Tokenizer;
 var FunctionMap = {
     max: function max(a, b) {
         return (a > b) ? a : b;
-    }
+    },
+    min: function min(a, b) {
+        return (a < b) ? a : b;
+    },
+    rand: function rand() {
+        return Math.random();
+    },
+    floor: function floor(a) {
+        return Math.floor(a);
+    },
+    ceil: function ceil(a) {
+        return Math.ceil(a);
+    },
+    round: function round(a) {
+        return Math.round(a);
+    },
 };
 /**
  * An expression node which is part of an abstract syntax tree.

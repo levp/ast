@@ -3,10 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+
+    <style>
+        body {
+            font-family: verdana, arial, sans-serif;
+            font-size: 20px;
+            background-color: #cccccc;
+        }
+
+        input {
+            font-size: inherit;
+        }
+    </style>
 </head>
 <body>
 
+<div>
+    <label>Enter an expression: <input type="text" id="input"></label>
+</div>
+<div>
+    <input type="button" id="evaluate-btn" value="Evaluate">
+</div>
+<div>
+    Result: <span id="output"></span>
+</div>
+
 <script src="shunting_yard.js"></script>
+<script>
+    var inputField = document.getElementById("input");
+    var outputElem = document.getElementById("output");
+    var evaluateBtn = document.getElementById("evaluate-btn");
+
+    evaluateBtn.addEventListener("click", function () {
+        var expr = inputField.value;
+        var result;
+
+        try {
+            var tokens = Tokenizer.tokenize(expr);
+            var ast = AST.create(tokens);
+            result = ast.evaluate();
+        } catch (ex) {
+            result = "Error: " + ex.message;
+        }
+
+        outputElem.innerHTML = result;
+    });
+
+
+</script>
 
 </body>
 </html>

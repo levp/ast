@@ -145,8 +145,9 @@ module Tokenizer {
             }
         }
 
-        const functionName = expr.substr(index, i);
+        const functionName = expr.substring(index, i);
         if (!FunctionMap.hasOwnProperty(functionName)) {
+            console.log(functionName);
             // No function with such a name exists
             return null;
         }
