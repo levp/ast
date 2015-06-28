@@ -12,6 +12,10 @@ class ExprNode {
         Object.freeze(this);
     }
 
+    /**
+     * Evaluates the AST represented by this node.
+     * @return The result of the evaluation process.
+     */
     public evaluate(): number {
         const token = this.token;
 

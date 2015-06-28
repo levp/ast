@@ -340,6 +340,10 @@ var ExprNode = (function () {
         // Immutable
         Object.freeze(this);
     }
+    /**
+     * Evaluates the AST represented by this node.
+     * @return The result of the evaluation process.
+     */
     ExprNode.prototype.evaluate = function () {
         var token = this.token;
         if (token.type === TokenType.Number) {
